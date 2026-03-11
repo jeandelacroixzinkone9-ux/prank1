@@ -1,0 +1,102 @@
+```html id="a4r8k2"
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sécurité</title>
+
+<style>
+body{
+background:black;
+color:#00ff00;
+font-family:monospace;
+text-align:center;
+padding:20px;
+font-size:20px;
+transition:0.5s;
+overflow-y:auto;
+}
+
+#countdown{
+font-size:60px;
+color:red;
+display:none;
+}
+
+#final{
+display:none;
+font-size:30px;
+color:white;
+margin-top:20px;
+}
+
+#sticker{
+display:none;
+width:100px;
+height:100px;
+margin-top:20px;
+}
+
+@keyframes glitch{
+0%{transform:translate(2px,2px);}
+25%{transform:translate(-2px,-2px);}
+50%{transform:translate(2px,-2px);}
+75%{transform:translate(-2px,2px);}
+100%{transform:translate(0,0);}
+}
+
+#final span{
+animation:glitch 0.3s infinite;
+}
+
+@media (max-width:600px){
+  body {font-size:18px;}
+  #final{font-size:24px;}
+  #countdown{font-size:50px;}
+  #sticker{width:80px;height:80px;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="text">Analyse du téléphone...</div>
+
+<div id="countdown">10</div>
+
+<div id="final">
+⚠️ <span>BELELOU</span> ⚠️ <br>
+TON TÉLÉPHONE EST PIRATÉ 😈
+</div>
+
+<img id="sticker" src="https://i.imgur.com/6X1dVbO.png" alt="Sticker souriant">
+
+<script>
+setTimeout(function(){document.getElementById("text").innerText="Accès aux données...";},2000);
+setTimeout(function(){document.getElementById("text").innerText="Localisation trouvée...";},4000);
+setTimeout(function(){
+document.getElementById("text").style.display="none";
+document.getElementById("countdown").style.display="block";
+compte();
+},6000);
+
+let n = 10;
+function compte(){
+document.getElementById("countdown").innerText = n;
+if(n==0){
+document.body.style.background="red";
+document.getElementById("countdown").style.display="none";
+document.getElementById("final").style.display="block";
+document.getElementById("sticker").style.display="block";
+}else{
+n--;
+setTimeout(compte,1000);
+}
+}
+</script>
+
+</body>
+</html>
+```
